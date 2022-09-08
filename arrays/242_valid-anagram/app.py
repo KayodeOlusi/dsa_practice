@@ -1,3 +1,4 @@
+# Solution 1
 def isAnagram(s, t):
     if len(s) != len(t):
         return False
@@ -24,6 +25,42 @@ def isAnagram(s, t):
         
     return True
 
-print(isAnagram("anagram", "nagaram")) 
-print(isAnagram("rat", "car"))
+# Solution 2
+def isAnagram2(s, t):
+    s.replace(" ", "").lower()
+    t.replace(" ", "").lower()
+
+    return sorted(s) == sorted(t)
+
+# Solution 3
+def isAnagram3(s, t):
+    s.replace(" ", "").lower()
+    t.replace(" ", "").lower()
+
+    if len(s) != len(t):
+        return False
+    
+    count = {}
+
+    for letter in s:
+        if letter in count:
+            count[letter] += 1
+        else:
+            count[letter] = 1
+    
+    for letter in t:
+        if letter in count:
+            count[letter] -= 1
+        else:
+            count[letter] = 1
+    
+    for k in count:
+        if count[k] != 0:
+            return False
+
+    return True  
+
+# Test
+print(isAnagram3("anagram", "nagaram")) 
+print(isAnagram3("rat", "car"))
     
