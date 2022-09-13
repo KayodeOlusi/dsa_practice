@@ -9,7 +9,31 @@ const sentenceReversal = (str) => {
   return result;
 };
 
-console.log(sentenceReversal("This is the best"));
-console.log(sentenceReversal("      space between"));
-console.log(sentenceReversal("space after       "));
-console.log(sentenceReversal("Hello John    how are you     "));
+const sentenceReversal2 = (str) => {
+  let index = 0;
+  let words = [];
+  let spaces = [" "];
+  let result = "";
+  let str_length = str.length;
+
+  while (index < str_length) {
+    if (!spaces.includes(str[index])) {
+      let start_of_word = index;
+
+      while (index < str_length && spaces.includes(str[index])) {
+        index += 1;
+      }
+      // TODO: Fix bug here
+      words.push(str.split(start_of_word, index));
+    }
+
+    index += 1;
+  }
+
+  return words;
+};
+
+console.log(sentenceReversal2("This is the best"));
+console.log(sentenceReversal2("      space between"));
+console.log(sentenceReversal2("space after       "));
+console.log(sentenceReversal2("Hello John    how are you     "));
