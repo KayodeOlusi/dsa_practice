@@ -10,7 +10,22 @@ def continuosSum(arr):
 
     return maxSum
 
+def continuosSum2(arr):
+    maxSum = 0
+    currentSum = 0
 
-print(continuosSum([1,2,-1,3,4,-1]))
-print(continuosSum([1,2,-1,3,4,10,10,-10,-1]))
-print(continuosSum([-1,1]))
+    for num in arr:
+        currentSum += num
+
+        if currentSum > maxSum:
+            maxSum = currentSum
+        
+        if currentSum < 0:
+            currentSum = 0
+        
+    return maxSum
+
+
+print(continuosSum2([1,2,-1,3,4,-1]))
+print(continuosSum2([1,2,-1,3,4,10,10,-10,-1]))
+print(continuosSum2([-1,1]))
