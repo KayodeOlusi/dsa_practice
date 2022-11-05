@@ -13,7 +13,7 @@ def uniqueCharacters2(string):
     return True
 
 
-print(uniqueCharacters2("abcde"))
-print(uniqueCharacters2("goo"))
-print(uniqueCharacters2("abcdefg"))
 print(uniqueCharacters2(""))
+print(uniqueCharacters2("goo"))
+print(uniqueCharacters2("abcde"))
+print(uniqueCharacters2("abcdefg"))
