@@ -3,7 +3,6 @@ const twoSum = (array, number) => {
 
   for (let i = 0; i < array.length; i++) {
     let difference = number - array[i];
-
     if (difference in result) return [result[difference], i];
 
     result[array[i]] = i;
