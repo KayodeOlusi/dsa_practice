@@ -4,7 +4,6 @@ const continuosSum = (array) => {
 
   for (let i = 0; i < array.length; i++) {
     currentSum += array[i];
-
     if (currentSum > maxSum) {
       maxSum = currentSum;
     }
