@@ -6,7 +6,6 @@ const pairSum = (array, target) => {
 
   for (const num of array) {
     let difference = target - num;
-    console.log(difference);
 
     if (!seen.has(difference)) {
       seen.add(difference);
