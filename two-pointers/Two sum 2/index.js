@@ -15,8 +15,8 @@ var twoSum = function (numbers, target) {
       left++;
     } else {
       return [
-        numbers.indexOf(numbers[left]) + 1,
-        numbers.indexOf(numbers[right], left + 1) + 1,
+        numbers.indexOf(numbers[left]) + 1, // Can also use left + 1 for constant time
+        numbers.indexOf(numbers[right], left + 1) + 1, // Can also use right + 1 for constant time
       ];
     }
   }
